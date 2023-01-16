@@ -14,7 +14,7 @@ export const useApi = (lat: string, lng: String) => {
         `${url}lat=${lat}&lon=${lng}&APPID=${ID}`
       )
       .then(function (response) {
-        setData(response.data.results);
+        setData(response.data);
       });
     setLoading(false);
   }, [lat, lng]);

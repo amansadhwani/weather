@@ -1,5 +1,5 @@
 import Tab from "./components/Tab";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { WeatherCard } from "./components/WeatherCard/WeatherCard";
 import { Weather } from "./components/Weather/Weather";
 import { useApi } from "./services/useApi";
@@ -11,17 +11,22 @@ const cities = [
 ];
 
 function App() {
-  const [currentIndex, setIndex] = useState<Number>(0);
+  const [currentActiveTab, setCurrentActiveTab] = useState<number>(0);
 
   const handleChange = (newIndex: number) => {
-    setIndex(newIndex);
+    setCurrentActiveTab(newIndex);
   };
 
-  const { data, loading } = useApi("45.4215", "75.6972");
+  const { data, loading } = useApi(
+    cities[currentActiveTab].lat,
+    cities[currentActiveTab].lng
+  );
+
+ 
 
   return (
     <div className="App">
-      <Tab value={currentIndex} onChange={handleChange}>
+      <Tab value={currentActiveTab} onChange={handleChange}>
         <Tab.Heads>
           {cities.map((city) => {
             return <Tab.Item key={city.id} label={city.name} index={city.id} />;
@@ -30,9 +35,8 @@ function App() {
       </Tab>
       <Weather />
       <WeatherCard />
+      {console.log(data)}
     </div>
   );
 }
 export default App;
-
-// process.env.REACT_APP_API_URL
