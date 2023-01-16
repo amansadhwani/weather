@@ -22,21 +22,23 @@ function App() {
     cities[currentActiveTab].lng
   );
 
- 
-
   return (
-    <div className="App">
-      <Tab value={currentActiveTab} onChange={handleChange}>
-        <Tab.Heads>
-          {cities.map((city) => {
-            return <Tab.Item key={city.id} label={city.name} index={city.id} />;
-          })}
-        </Tab.Heads>
-      </Tab>
-      <Weather />
-      <WeatherCard />
+    <>
+      <div className="App">
+        <Tab value={currentActiveTab} onChange={handleChange}>
+          <Tab.Heads>
+            {cities.map((city) => {
+              return (
+                <Tab.Item key={city.id} label={city.name} index={city.id} />
+              );
+            })}
+          </Tab.Heads>
+        </Tab>
+        <Weather />
+        <WeatherCard />
+      </div>
       {console.log(data)}
-    </div>
+    </>
   );
 }
 export default App;
