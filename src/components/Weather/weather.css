@@ -1,0 +1,21 @@
+.center {
+    margin: auto;
+    width: 50%;
+    border: 6px solid white;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.card-content {
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #5c5c5c;
+}
+
+.city-icon{
+    display: block;
+    margin: auto;
+}

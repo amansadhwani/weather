@@ -1,0 +1,30 @@
+body {
+  background: #eef6fb;
+}
+
+.heads {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 25px auto 25px auto;
+  width: 40%;
+}
+
+.item {
+  color: #5c5c5c;
+  font-size: 36px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+
+}
+
+.item.active {
+  color: #5FB0E8;
+  font-weight: 700;
+}
+
+
